@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    padding: 20px;
+}
+
+#root {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 60px;
+}
+
+.add-ticket {
+    position: absolute;
+    top: 0;
+    right: 0;   
+    background-color: #fff;
+    color: #6b778c;
+    border: 1px solid #6b778c;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-ticket:hover {
+    background-color: #f0f0f0;
+}
+
+.ticket {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    border: 1px solid #6b778c;
+    padding: 12px 15px;
+    margin-bottom: -1px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #6b778c;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox:checked {
+    background-color: #fff;
+}
+
+.checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #6b778c;
+    font-size: 12px;
+}
+
+.ticket-name {
+    flex: 1;
+    font-size: 15px;
+    color: #6b778c;
+}
+
+.ticket-created {
+    font-size: 13px;
+    color: #6b778c;
+    white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #6b778c;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b778c;
+}
+
+.ticket-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #6b778c;
+    color: #6b778c;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.ticket-form h1 {
+    margin: 0 0 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.ticket-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ticket-form .short-input,
+.ticket-form .full-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #6b778c;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ticket-form .full-input {
+    height: 80px;
+    resize: none;
+}
+
+.ticket-form .cancel-btn,
+.ticket-form .ok-btn {
+    padding: 8px 16px;
+    border: 1px solid #6b778c;
+    color: #6b778c;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.ticket-description {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #6b778c;
+    margin-left: 25px;
+}
