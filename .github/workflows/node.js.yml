@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "master" ]
 
+defaults:
+  run:
+    working-directory: helpdesk/frontend
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,12 +23,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: helpdesk/frontend/package-lock.json
     - run: npm ci
     - run: npm run build
     - run: npm test
     - uses: actions/upload-pages-artifact@v3
       with:
-        path: ./dist
+        path: helpdesk/frontend/dist
 
   deploy:
     needs: build
